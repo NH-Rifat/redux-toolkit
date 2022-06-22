@@ -34,3 +34,17 @@ const counterReducer = (state = initialCounterState, action) => {
       break;
   }
 };
+
+// create store...
+const store = createStore(counterReducer);
+
+store.subscribe(()=>{
+  console.log(store.getState());
+})
+
+store.dispatch(incrementCounter());
+store.dispatch(incrementCounter());
+store.dispatch(incrementCounter());
+
+store.dispatch(decrementCounter());
+store.dispatch(decrementCounter());
